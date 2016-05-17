@@ -67,6 +67,8 @@ h2 {
 @media screen and (max-width: 640px) {
 	h1 {
 		font-size: 35px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	h2 {
@@ -76,9 +78,19 @@ h2 {
 
 	h3 {
 		font-size: 20px;
+		margin-bottom: 0;
 	}
 
 	h4 {
 		font-size: 15px;
+		margin-bottom: 0;
+	}
+
+	.players {
+		margin: 5px 5px 0 5px;
+	}
+
+	.strike {
+		margin-bottom: 0;
 	}
 }
