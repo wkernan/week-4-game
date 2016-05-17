@@ -11,11 +11,12 @@ $(document).ready(function() {
 	var players = [
 		{
 			id: "first",
-			name: "Bill Kernan",
+			name: "Steve",
 			health: 100,
 			atkPower: 10,
 			ctrAtkPower: 20,
-			pic: 'https://secure.gravatar.com/avatar/ee340231d2d8c8c380070273506065c3.jpg?s=512d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png'
+			pic: '../assets/images/steve.png'
+			/*pic: 'https://secure.gravatar.com/avatar/ee340231d2d8c8c380070273506065c3.jpg?s=512d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png'*/
 		},
 
 		{
@@ -29,20 +30,20 @@ $(document).ready(function() {
 
 		{
 			id: "third",
-			name: "Josh Madewell",
+			name: "Creeper",
 			health: 160,
 			atkPower: 6,
 			ctrAtkPower: 8,
-			pic: 'https://secure.gravatar.com/avatar/4090f8251ba508c6db1a1bd5c8ec20c3.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0021-512.png'	
+			pic: '../assets/images/creeper.jpg'	
 		},
 
 		{
 			id: "fourth",
-			name: "Roger Le",
+			name: "Enderman",
 			health: 190,
 			atkPower: 4,
 			ctrAtkPower: 12,
-			pic: 'https://secure.gravatar.com/avatar/5edbb37e96d66ce7510435a8291701a1.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0025-512.png'	
+			pic: '../assets/images/enderman.png'	
 		},
 
 	];
