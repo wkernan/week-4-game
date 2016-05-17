@@ -50,7 +50,7 @@ $(document).ready(function() {
 	function makePlayers() {
 		for(var i=0; i<players.length; i++) {
 			var img = $('<img>').addClass('players img-circle').attr({id: players[i].name, src: players[i].pic, "data-hlth": players[i].health, "data-atk": players[i].atkPower, "data-ctratk": players[i].ctrAtkPower});
-			var hlth = $('<div>').addClass('progress-bar progress-bar-success').attr({"role":'progressbar', "aria-valuenow": '40', "aria-valuemin": '0', "aria-valuemax": '100', "style": 'width: 100%'}).text(players[i].health);
+			var hlth = $('<div>').addClass('progress-bar progress-bar-success').attr({"role":'progressbar', "aria-valuenow": '40', "aria-valuemin": '0', "aria-valuemax": players[i].health, "style": 'width: 100%'}).text(players[i].health);
 			var divHlth = $('<div>').addClass('progress').append(hlth);
 			var p = $('<p>').text(players[i].name);
 			var li = $('<li>');
@@ -88,14 +88,29 @@ $(document).ready(function() {
 
 	$('body').on('click', '.strike', function() {
 		if(playHlth > 0 && $.trim($("#defender").html()) !='') {
-			console.log('works');
+			defMaxHlth = parseInt($('#defender').find('.progress-bar').attr('aria-valuemax'));
 			defHlth = parseInt(defHlth) - parseInt(heroAtk);
+			playMaxHlth = parseInt($('.player').find('.progress-bar').attr('aria-valuemax'));
 			playHlth = parseInt(playHlth) - parseInt(defCtrAtk);
 			$('.player').find('.progress-bar').text(playHlth);
+			$('.player').find('.progress-bar').css('width', playHlth/playMaxHlth*100 + '%');
+			$('.defender').find('.progress-bar').css('width', defHlth/defMaxHlth*100 + '%');
 			$('.defender').find('.progress-bar').text(defHlth);
 			$('#struck').text('You were counterattacked by ' + defName + ' for ' + defCtrAtk);
 			$('#hit').text('You attack ' + defName + ' for ' + heroAtk);
 			heroAtk += parseInt(playAtk);
+			if(playHlth/playMaxHlth*100 < 50) {
+				$('.player').find('.progress-bar').removeClass('progress-bar-success').addClass('progress-bar-warning');
+			}
+			if(playHlth/playMaxHlth*100 < 20) {
+				$('.player').find('.progress-bar').removeClass('progress-bar-warning').addClass('progress-bar-danger');
+			}
+			if(defHlth/defMaxHlth*100 < 50) {
+				$('.defender').find('.progress-bar').removeClass('progress-bar-success').addClass('progress-bar-warning');
+			}
+			if(defHlth/defMaxHlth*100 < 20) {
+				$('.defender').find('.progress-bar').removeClass('progress-bar-warning').addClass('progress-bar-danger');
+			}
 			if(defHlth <= 0) {
 				$('#struck').text('You defeated ' + defName);
 				$('#hit').text('');
