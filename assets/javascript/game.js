@@ -53,18 +53,18 @@ $(document).ready(function() {
 			var hlth = $('<div>').addClass('progress-bar progress-bar-success').attr({"role":'progressbar', "aria-valuenow": '40', "aria-valuemin": '0', "aria-valuemax": players[i].health, "style": 'width: 100%'}).text(players[i].health);
 			var divHlth = $('<div>').addClass('progress').append(hlth);
 			var p = $('<p>').text(players[i].name);
-			var li = $('<li>');
-			li.addClass('inline pick text-center').append(img).append(divHlth).append(p);
-			$('#choosePlayer').append(li);
+			var rowDiv = $('<div>');
+			rowDiv.addClass('inline pick text-center col-md-3 col-xs-6').append(img).append(divHlth).append(p);
+			$('#choosePlayer').append(rowDiv);
 		};
 	};
 	makePlayers();
 
 	$('body').on('click', '.pick', function() {
 		$(this).children('.players').css('border', '5px solid green');
-		$(this).removeClass('pick').addClass('player');
+		$(this).removeClass('pick col-md-3 col-xs-6').addClass('player');
 		$(this).siblings().children('.players').css('border', '5px solid red');
-		$(this).siblings().removeClass('pick').addClass('enemy').detach().appendTo('#enemies');
+		$(this).siblings().removeClass('pick col-md-3 col-xs-6').addClass('enemy').detach().appendTo('#enemies');
 		$(this).detach().appendTo('#character');
 		$('.character').removeClass('hide');
 		$('.enemies').removeClass('hide');
