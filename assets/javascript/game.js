@@ -139,6 +139,7 @@ $(document).ready(function() {
 		$('#hit').text('');
 		$('#character').empty();	
 		$('#defender').empty();
+		$('#enemies').empty();
 		$('#select').removeClass('hide');
 		$('.attack').addClass('hide');
 		$('.character').addClass('hide');
