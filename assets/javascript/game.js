@@ -61,9 +61,9 @@ $(document).ready(function() {
 	makePlayers();
 
 	$('body').on('click', '.pick', function() {
-		$(this).children('.players').css('border', '5px solid green');
+		$(this).children('.players').css('border', '5px solid #449D44');
 		$(this).removeClass('pick col-md-3 col-xs-6').addClass('player');
-		$(this).siblings().children('.players').css('border', '5px solid red');
+		$(this).siblings().children('.players').css('border', '5px solid #F0AD4E');
 		$(this).siblings().removeClass('pick col-md-3 col-xs-6').addClass('enemy').detach().appendTo('#enemies');
 		$(this).detach().appendTo('#character');
 		$('.character').removeClass('hide');
@@ -79,6 +79,7 @@ $(document).ready(function() {
 		$('.attack').removeClass('hide');
 		if($.trim($("#defender").html())=='') {
 			$('#struck').text('Ready... Fight!');
+			$(this).children('.players').css('border', '5px solid #C9302C')
 			$(this).removeClass('enemy').addClass('defender');
 			$(this).detach().appendTo('#defender');
 			defHlth = parseInt($('.defender').children('.players').attr('data-hlth'));
