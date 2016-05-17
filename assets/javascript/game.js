@@ -78,6 +78,7 @@ $(document).ready(function() {
 	$('body').on('click', '.enemy', function() {
 		$('.attack').removeClass('hide');
 		if($.trim($("#defender").html())=='') {
+			$('#struck').text('Ready... Fight!');
 			$(this).removeClass('enemy').addClass('defender');
 			$(this).detach().appendTo('#defender');
 			defHlth = parseInt($('.defender').children('.players').attr('data-hlth'));
