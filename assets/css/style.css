@@ -2,9 +2,9 @@
 
 body {
 	font-family: 'Graduate', cursive;
-	background-image: url('http://www.trilogyed.com/wp-content/uploads/2015/05/Home_Header.jpg');
+	/*background-image: url('http://www.trilogyed.com/wp-content/uploads/2015/05/Home_Header.jpg');*/
 	background-size: 100%;
-	/*background-image: url(../images/minecraft.jpg);*/
+	background-image: url(../images/minecraft.jpg);
 	color: black;
 }
 
