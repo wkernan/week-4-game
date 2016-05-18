@@ -105,8 +105,8 @@ $(document).ready(function() {
 			$('.defender').find('.progress-bar').text(defHlth);
 			$('#struck').text('You were counterattacked by ' + defName + ' for ' + defCtrAtk);
 			$('#hit').text('You attack ' + defName + ' for ' + heroAtk);
-			$('.player img').effect('bounce');
-			$('.defender img').effect('bounce');
+			$('.player img').effect('pulsate');
+			$('.defender img').effect('pulsate');
 			heroAtk += parseInt(playAtk);
 			if(playHlth/playMaxHlth*100 < 50) {
 				$('.player').find('.progress-bar').removeClass('progress-bar-success').addClass('progress-bar-warning');
@@ -121,13 +121,18 @@ $(document).ready(function() {
 				$('.defender').find('.progress-bar').removeClass('progress-bar-warning').addClass('progress-bar-danger');
 			}
 			if(defHlth <= 0) {
+				defHlth = 0;
+				$('.defender').find('.progress-bar').text(defHlth);
 				$('#struck').text('You defeated ' + defName);
 				$('#hit').text('');
+				//$('.defender img').effect('explode');
 				$('#defender').empty();
 			}
 			if(playHlth <= 0) {
 				playHlth = 0;
 				$('.player').find('.progress-bar').text(playHlth);
+				//$('.player img').effect('explode');
+				$('.player').empty();
 				alert('You Lose');
 				$('.reset').removeClass('hide');
 			}
