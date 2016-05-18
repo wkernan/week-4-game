@@ -21,11 +21,11 @@ $(document).ready(function() {
 
 		{
 			id: "second",
-			name: "Phillip Cook",
+			name: "Allen Garcia",
 			health: 130,
 			atkPower: 10,
 			ctrAtkPower: 8,
-			pic: 'https://avatars.slack-edge.com/2016-04-27/38179150022_5b0a09f62f0897206ccd_512.png'
+			pic: 'https://avatars.slack-edge.com/2016-04-06/32604598755_420625060899e53c4c55_512.jpg'
 			/*pic: '../assets/images/jamie.jpg'*/	
 		},
 
