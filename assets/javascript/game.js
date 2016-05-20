@@ -13,8 +13,8 @@ $(document).ready(function() {
 			id: "first",
 			name: "Bill Kernan",
 			health: 100,
-			atkPower: 8,
-			ctrAtkPower: 20,
+			atkPower: 9,
+			ctrAtkPower: 5,
 			/*pic: '../assets/images/steve.png'*/
 			pic: 'https://secure.gravatar.com/avatar/ee340231d2d8c8c380070273506065c3.jpg?s=512d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png'
 		},
@@ -23,8 +23,8 @@ $(document).ready(function() {
 			id: "second",
 			name: "Allen Garcia",
 			health: 130,
-			atkPower: 10,
-			ctrAtkPower: 8,
+			atkPower: 9,
+			ctrAtkPower: 7,
 			pic: 'https://avatars.slack-edge.com/2016-04-06/32604598755_420625060899e53c4c55_512.jpg'
 			/*pic: '../assets/images/jamie.jpg'*/	
 		},
@@ -32,9 +32,9 @@ $(document).ready(function() {
 		{
 			id: "third",
 			name: "Josh Madewell",
-			health: 160,
-			atkPower: 6,
-			ctrAtkPower: 8,
+			health: 150,
+			atkPower: 9,
+			ctrAtkPower: 7,
 			/*pic: '../assets/images/creeper.jpg'*/
 			pic: 'https://secure.gravatar.com/avatar/4090f8251ba508c6db1a1bd5c8ec20c3.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0021-512.png'	
 		},
@@ -42,9 +42,9 @@ $(document).ready(function() {
 		{
 			id: "fourth",
 			name: "Roger Le",
-			health: 170,
-			atkPower: 4,
-			ctrAtkPower: 10,
+			health: 190,
+			atkPower: 15,
+			ctrAtkPower: 14,
 			/*pic: '../assets/images/enderman.png'*/
 			pic: 'https://secure.gravatar.com/avatar/5edbb37e96d66ce7510435a8291701a1.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0025-512.png'	
 		},
@@ -137,7 +137,7 @@ $(document).ready(function() {
 				$('.reset').removeClass('hide');
 			}
 		}
-		if($.trim($("#enemies").html())=='' && $.trim($("#defender").html()) =='') {
+		if($.trim($("#enemies").html())=='' && $.trim($("#defender").html()) =='' && $.trim($(".player").html()) != '') {
 			alert('You Win');
 			$('.reset').removeClass('hide');
 		}
