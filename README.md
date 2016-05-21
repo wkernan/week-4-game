@@ -1,6 +1,6 @@
 # UT BootCamp RPG
 
-### Week 3 Game
+### Week 4 Game
 
 ### Objectives
 * Create a fun and interactive game in the browser.
